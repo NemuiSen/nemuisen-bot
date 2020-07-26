@@ -1,6 +1,7 @@
 const fs = require('fs')
+require('dotenv').config()
+const { prefix } = require('./config.json')
 const { Client, Collection } = require('discord.js')
-const { prefix, token } = require('./config.json')
 
 const client = new Client()
 client.commands = new Collection()
@@ -28,11 +29,10 @@ client.on("ready", () => {
 
 
 client.on('message', msg => {
-	if (!msg.content.startsWith(prefix) || msg.author.bot) return
+	if (!msg.content.toLocaleLowerCase().startsWith(prefix) || msg.author.bot) return
 
 	const args = msg.content.slice(prefix.length).trim().split(' ')
 	const command = args.shift().toLocaleLowerCase();
-
 
 	if (!client.commands.get(command)) return
 
@@ -47,4 +47,6 @@ client.on('message', msg => {
 	}
 })
 
-client.login(token)
+client.login(
+	process.env.token
+)
