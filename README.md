@@ -1,6 +1,6 @@
 <img src="https://cdn.discordapp.com/app-icons/484921268962066432/31ac0c6fb360ebff9beca9eb1d103765.png?size=256&quot" align="right" />
 
-# **nemuisen-bot**
+# **dori-mubotto**
 Un simple bot en **proceso de desarrollo**.
 No creo que lo actualice mucho
 
@@ -30,7 +30,7 @@ Puede:
 * Manage Messages
 
 ---
-## ¿Quieres probarlo?
+## Invitalo
 **[Invitalo](https://discordapp.com/api/oauth2/authorize?client_id=484921268962066432&scope=bot&permissions=11264)** a algún grupo que tengas y luego me das tu opinión
 
 ---
