@@ -11,7 +11,7 @@ module.exports = {
 	run(client, msg, args) {
 
 		let content = ''
-		client.commands.each(commad => content += `\`${commad.help.name}\`: ${commad.help.desc}\n`)
+		client.commands.each(commad => content += `\`\`\`yalm\n${commad.help.name}\`\`\`${commad.help.desc}\n`)
 
 		const reply = new MessageEmbed()
 		.setTitle('Help')
