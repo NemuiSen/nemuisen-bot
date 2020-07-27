@@ -10,7 +10,7 @@ module.exports = {
 		desc: "Una waifu, ¿por que no?"
 	},	
 
-	async run (msg, args) {
+	async run (client, msg, args) {
 		const sfw = [
 			nekosClient.sfw.foxGirl(),
 			nekosClient.sfw.kemonomimi(),
@@ -34,7 +34,7 @@ module.exports = {
 
 		const reply = new Discord.MessageEmbed()
 		.setTitle('Monas Shinas')
-		.setFooter(`Comando usado por ${msg.author.username}`, msg.author.displayAvatarURL)
+		.setFooter(`Comando usado por ${msg.author.username}`, msg.author.displayAvatarURL())
 		.setImage(image)
 		.setColor(color)
 

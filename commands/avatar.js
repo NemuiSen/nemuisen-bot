@@ -8,7 +8,7 @@ module.exports = {
 		desc: "Muestra el avatar de la persona mencionada o el tuyo en caso de que no se mencione a alguien"
 	},
 
-	run(msg, args) {
+	run(client, msg, args) {
 		const user = msg.mentions.users.first() || msg.author
 		const title = [
 			"Este es el avatar de ",

@@ -9,9 +9,9 @@ module.exports = {
 		desc: "Un abraso UwU"
 	},
 
-	async run(msg, args) {
+	async run(client, msg, args) {
 		const reply = new MessageEmbed()
-		.setFooter(`Comando usado por ${msg.author.username}`, msg.author.displayAvatarURL)
+		.setFooter(`Comando usado por ${msg.author.username}`, msg.author.displayAvatarURL())
 		.setImage((await sfw.hug()).url)
 		.setColor(color)
 

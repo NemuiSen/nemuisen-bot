@@ -1,20 +1,24 @@
 const { MessageEmbed } = require('discord.js')
 const { color } = require('../config.json')
-const nl = require('nekos.life')
-const { sfw, nsfw } = new nl()
+const fs = require('fs')
 
 module.exports = {
 	help: {
-		name: 'neko',
-		desc: 'Este comando retorna una imagen de una Nekomimi'
+		name: 'help',
+		desc: 'Muestra una lista con los comandos disponibles'
 	},
 
-	async run (client, msg, args) {
+	run(client, msg, args) {
+
+		let content = ''
+		client.commands.each(commad => content += `\`${commad.help.name}\`: ${commad.help.desc}\n`)
+
 		const reply = new MessageEmbed()
-		.setTitle('Neko!!!! ^w^')
+		.setTitle('Help')
+		.setDescription(content)
 		.setFooter(`Comando usado por ${msg.author.username}`, msg.author.displayAvatarURL())
-		.setImage((await (msg.channel.nsfw ? nsfw.eroNeko() : sfw.neko())).url)
 		.setColor(color)
+
 		msg.channel.send(reply)
 	}
 }

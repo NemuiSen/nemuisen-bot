@@ -1,19 +1,22 @@
-const fs = require('fs')
 require('dotenv').config()
-const { prefix } = require('./config.json')
+const fs = require('fs')
 const { Client, Collection } = require('discord.js')
+const { prefix } = require('./config.json')
 
 const client = new Client()
 client.commands = new Collection()
 
 
+//Searching for commands (files)
 fs.readdir('./commands/', (err, files) => {
 	if (err) console.log(err)
 
+	//Only .js files
 	const commandFiles = files.filter(file => file.endsWith('js'))
 	if (commandFiles.length <= 0) return console.log('No se encontro ningun comando')
-	console.log(`Comandos disponibles: ${commandFiles.length}`)
 
+	//shows what commands are available
+	console.log(`Comandos disponibles: ${commandFiles.length}`)
 	commandFiles.forEach((f, i) => {
 		const command = require(`./commands/${f}`)
 		console.log(`${i+1}: ${command.help.name} (${f}) Cargado!`)
@@ -40,12 +43,13 @@ client.on('message', msg => {
 	//msg.delete().catch(_=>{})
 
 	try {
-		client.commands.get(command).run(msg, args);
+		client.commands.get(command).run(client, msg, args)
 	} catch (error) {
-		console.error(error);
-		message.reply('there was an error trying to execute that command!');
+		console.error(error)
+		msg.reply('there was an error trying to execute that command!')
 	}
 })
+
 
 client.login(
 	process.env.token
