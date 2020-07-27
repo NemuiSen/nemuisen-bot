@@ -3,6 +3,7 @@ const { color } = require('../config.json')
 const nl = require('nekos.life')
 const { sfw } = new nl()
 
+
 module.exports = {
 	help: {
 		name: "hug",
