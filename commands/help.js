@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js')
 const { color } = require('../config.json')
 const fs = require('fs')
 
+
 module.exports = {
 	help: {
 		name: 'help',
