@@ -1,4 +1,4 @@
-const Discord = require('discord.js')
+const { MessageEmbed } = require('discord.js')
 const { color } = require('../config.json')
 const nekos = require('nekos.life')
 const nekosClient = new nekos()
@@ -32,7 +32,7 @@ module.exports = {
 			)
 		).url
 
-		const reply = new Discord.MessageEmbed()
+		const reply = new MessageEmbed()
 		.setTitle('Monas Shinas')
 		.setFooter(`Comando usado por ${msg.author.username}`, msg.author.displayAvatarURL())
 		.setImage(image)
