@@ -18,6 +18,8 @@ module.exports = {
 			['idiota', 			  [sfw.baka,   `${msg.author.username} le dijo idiota a ${user.username}`]],
 			['beso', 			  [sfw.kiss,   `${msg.author.username} beso a ${user.username}`]],
 			['caricia', 		  [sfw.pat,    `${msg.author.username} le dio una caricia a ${user.username}`]],
+			['smug', 			  [sfw.smug,   `smug 7w7`]],
+			['cosquillas', 		  [sfw.tickle, `${msg.author.username} le iso cosquillas a ${user.username}`]],
 		])
 
 		if (!actions.has(args[0]))
